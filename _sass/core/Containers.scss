@@ -1,0 +1,20 @@
+/* Containers
+   ========================================================================== */
+
+.container {
+	margin: 0 auto;
+	padding-right: 0;
+	padding-left: 0;
+	max-width: 140rem;
+
+	@include breakpoint ( phone-only ) {
+		padding: 0 1em 0 1em;
+	}
+ 
+
+}
+
+.bg-alt {
+	background-color: _palette(bg-alt);
+}
+

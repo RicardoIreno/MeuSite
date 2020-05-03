@@ -1,0 +1,111 @@
+/* Project
+   ========================================================================== */
+
+.project {
+	margin:       0;
+	padding-top:  10rem;
+}
+ 
+.project-name {
+	@extend .h2;
+	display: inline;
+	padding: 2rem;
+	z-index: 1000000;
+	background-color: transparentize(#D0C4A0, 0.5);
+}  
+
+.presentation {
+	text-align: center;
+}
+
+.item-project {
+	display:    flex;
+	clear:      both;
+	overflow:   auto;
+	
+	@include breakpoint ( tab-portrait-up ) {
+		text-align: center;
+		img { width: 70%;  }
+		padding-bottom: 5rem;
+	}
+
+	@include breakpoint ( tab-portrait-only ) {
+		text-align: justify;
+		overflow:   hidden;
+		padding-bottom: 1rem;
+		img { width: 100%; }
+	}
+	
+}
+.first-info {
+	display: block;
+	background-color: #fff;
+
+}
+
+.info-item {
+	z-index:  3;
+	overflow: auto;
+	background-color: transparentize($color: #fff, $amount: 0.5);
+
+
+	@include breakpoint ( tab-portrait-up) {
+		position: absolute;
+		top: 	  200px;
+		width:    30%;
+		text-align: center;		
+	}
+
+	@include breakpoint ( tab-portrait-only ) {
+		display: block;	
+		width:   100%;
+		top:     0;
+		right:   0;
+		left:    0;
+		margin:  0;
+		padding: 0;
+		text-align: justify;
+	}
+
+}
+
+.side-center {
+	clear:    both;
+	display: flex;
+	justify-content: space-around;
+	img { 
+		display: block;
+		width: 100%;
+		float: center;
+		//margin: 0 auto;
+	} 
+}
+
+.side-b {
+	img        { 
+		float: right; }
+	.info-item { left: 5%; }
+}
+
+.side-a {
+	img        {float: left;}
+	.info-item { right: 5%;	}
+}
+
+.side-b .side-a {
+	clear:    both;
+
+
+	@include breakpoint ( tab-portrait-only ) {
+		display: block;
+		float:   none;
+		left:    0;
+		right:   0;
+
+		img {
+			float:   none;
+			display: block;
+		}
+	}
+}
+

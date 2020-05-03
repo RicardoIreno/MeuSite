@@ -1,0 +1,32 @@
+---
+layout: another
+title: contact
+permalink: /contact/
+---
+<section class="contact-grid">
+  
+    <div class="form-wrapper">
+        <form action="https://formspree.io/{{ site.email }}" method="POST" class="form">
+            <h1>Contact</h1>
+            <div class="form-molecule">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Your name"/>
+            </div>
+            <div class="form-molecule">
+                <label for="email">Email</label>
+                <input type="text" name="_replyto" id="email" placeholder="Your e-mail"/>
+            </div>
+            <div class="form-molecule">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="6" placeholder="Your message"></textarea>
+            </div>
+            <div class="form-molecule-btn">
+                <input type="submit" value="Send" class="btn" />
+            </div>  
+        </form>  
+        
+        <img class="img-contact" src="/assets/images/contact.jpg" />
+    </div>
+
+
+</section>

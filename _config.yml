@@ -1,0 +1,20 @@
+# User config
+author: "Ricardo Ireno"
+profession: "Ilustrator"
+tagline: "Portfólio"
+description: "Illustrator base in São Paulo city, Brazil. Love making digital paitings, and give life for ideas."
+keywords: "Ilustrador, Concept Artist, Ilustrações"
+email: "rirenodraws@gmail.com"
+
+twitter:    "https://twitter.com/rirenodraws"
+instagram:  "https://www.instagram.com/rirenodraws/"
+artstation: "https://www.artstation.com/ricardoireno" 
+facebook:   "https://www.facebook.com/rirenodraws"
+linkedin:   "www.linkedin.com/in/ricardoirenoilustrador"
+
+
+highlighter: rouge
+sass:
+  style: compressed
+
+include: [_pages]

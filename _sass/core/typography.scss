@@ -1,0 +1,87 @@
+/* Typography
+   ========================================================================== */
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	color: _palette(fg);
+	font-family: _font(family);
+	font-size: 1.8em;
+	line-height: 1.6;
+	font-weight: 600;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+.h1 {
+	color: _palette(h1);
+	font-family: _font(family-h1);
+	font-size: 2.4rem;
+	font-weight: 600;
+	line-height: 1;
+	margin: 0;
+}
+
+h2,
+.h2 {	
+	color: _palette(h2);
+	display: block;
+	font-family: _font(family-h2);
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: .2rem;
+    line-height: 1;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+} 
+
+h3,
+.h3 {
+	color: _palette(h3);
+	font-family: _font(family-h3);
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1;
+	margin: 0;
+
+}
+
+p {
+	margin: 0;
+}
+
+a {
+	color: _palette(a);
+	text-decoration: none;
+}
+
+.info {
+    font-family: _font(item-info);
+    margin:    1em;
+    padding:   1em;
+    font-size: 1.5em;
+
+    @include breakpoint ( tab-portrait-up) {
+        margin:    0.5em; 
+        font-size: 1.2em;
+    }
+
+    @include breakpoint ( tab-portrait-only ) { 
+        margin:    0.25em 0.25em 2em 0.25em; 
+        font-size: 1em;
+	}
+		
+}
+
+.info-story { 
+    font-style: italic;
+    font-family: _font(item-info);
+    font-size: 1.5em;
+    
+    &:after {
+        content: "\00022";
+    }
+
+}

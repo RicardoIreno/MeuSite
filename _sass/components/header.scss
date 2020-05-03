@@ -1,0 +1,21 @@
+/* Header
+   ========================================================================== */
+
+.header-container {
+	margin: 0 auto;
+	max-width: 140rem;
+	padding: 3rem 1rem; 
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	text-transform: uppercase;
+
+
+	@include breakpoint ( phone-only ) {
+		justify-content: space-around;
+	}
+
+}
+
+

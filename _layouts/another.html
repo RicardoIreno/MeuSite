@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body class="bg-alt">
+	
+	{% include header.html %}
+	
+	<main class="container">
+	
+		{{ content }}
+	  
+		<a href="{{site.baseurl}}/" class="button-back">Back</a>
+	</main>
+	{% include footer.html %}
+	<script src="{{ "/assets/scripts/home.js" | prepend: site.baseurl }}"></script>
+</body>
+</html>

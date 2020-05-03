@@ -1,0 +1,122 @@
+/* Projects
+   ========================================================================== */
+
+.projects {
+	padding-top: 10rem;
+}
+
+.projects-list {
+
+	@include breakpoint ( phone-up ) {
+		margin-left:  -1.5rem;
+		margin-right: -1.5rem;
+		clear: both;
+
+		li {
+			float: left;
+			width: 50%;
+		}
+
+		a {
+			padding: 0 1.5rem;
+		}
+	}
+	@include breakpoint ( tab-portrait-up ) {
+		li {
+			width: 33.33333%;
+		}
+	}
+
+	li {
+		margin-bottom: 3rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	a {
+		display: block;
+
+		&:hover {
+			.img-wrapper {
+				&:before {
+					opacity: 1;
+				}
+				&:after {
+					opacity: .45;
+				}
+			}
+		}
+	}
+
+	.img-wrapper {
+		position: relative;
+
+		&:before {
+			@extend .h2;
+			content: "Click to see more";
+			position: absolute;
+			color:       _palette(fg);
+			font-weight: 800;
+			top:         50%;
+			left:        50%;
+			opacity:     0;
+			-webkit-transition: all .5s ease-in-out;
+    		transition: all .5s ease-in-out;
+    		-webkit-transition-delay: .25s;
+    		transition-delay: .25s;
+    		z-index: 2;
+		}
+
+		&:after {
+			background: #fff;
+			content: "";
+			display:  block;
+			position: absolute;
+			top:      0;
+			right:    0;
+			bottom:   0;
+			left:     0;
+			opacity:  0;
+    		z-index:  1;
+			-webkit-transition: all .5s ease-in-out;
+    		transition: all .5s ease-in-out;
+		}
+	}
+
+	img {
+		width: 100%;
+	}
+
+	span {
+		margin: 1rem 0 .5rem;
+	}
+}
+
+
+figure {
+	margin:  0;
+	padding: 0;
+	width:   100%;
+}
+
+figcaption {
+	@extend   .h2;
+	position:  absolute;
+	color:   #111;
+	opacity:   0;
+	font-size: 2em;
+	top:       10px;
+	left:     10px;
+}
+
+.img-wrapper:hover {
+	figcaption {
+		opacity: 1;
+		-webkit-transition: all .5s ease-in-out;
+		transition: all .5s ease-in-out;
+
+	}
+}
+

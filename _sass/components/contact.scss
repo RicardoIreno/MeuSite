@@ -1,0 +1,25 @@
+/* Contact
+   ========================================================================== */
+
+.contact-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 3rem 0;
+}
+
+.form-wrapper {
+    background-color: _palette(form-bg);
+    display: flex;
+    justify-content: space-between;
+    border-radius:    10px;
+    box-shadow:       0px 3px 7px rgba(0,0,0,.25);
+}
+
+.img-contact {
+    overflow: auto;
+    @include breakpoint ( tab-landscape-only ) {
+        display: none;
+    }
+} 

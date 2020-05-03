@@ -1,0 +1,16 @@
+<section class="projects">
+    <ul class="projects-list">
+        {% for item in site.categories.projects reversed %}
+            <li>
+                <a href="{{ item.url | prepend: site.baseurl }}">
+                    <div class="img-wrapper">
+                        <figure>
+                            <img src="{{ item.project.logo | prepend: site.baseurl }}" alt="{{ item.project.title }}" />
+                            <figcaption>{{ item.project.title }}</figcaption>
+                        </figure>
+                    </div>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</section> 

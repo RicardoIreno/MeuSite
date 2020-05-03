@@ -1,0 +1,26 @@
+/* follow
+   ========================================================================== */
+
+.follow {
+    display: flex;
+    clear: both;
+
+    img {
+        width: 30px;
+        padding: 0.3rem;
+    }
+
+    li {
+        display:inline-block;
+    }
+
+    a {
+        color: _palette(footer-fg);
+    }
+
+}
+
+.follow-content {
+    margin: 0 auto;
+    display: block;
+}

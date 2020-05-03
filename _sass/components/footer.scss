@@ -1,0 +1,25 @@
+/* Footer
+   ========================================================================== */
+
+.footer-container {
+	//background-color: _palette(footer-bg);
+	margin: 0;
+	padding: 0;
+	padding: 1rem 0 7rem 0;
+	text-align: center;
+	clear: both;
+
+	hr {
+		background-color: _palette(footer-fg);
+		max-width: 600px;
+		height: 0.2rem;
+		margin: 0 auto;
+		margin-bottom: 2rem;
+	}
+} 
+
+
+
+
+// https://willianjusten.com.br/background-fixo-com-css/
+//https://desenvolvimentoparaweb.com/css/unidades-css-rem-vh-vw-vmin-vmax-ex-ch/

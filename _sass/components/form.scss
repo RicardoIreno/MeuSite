@@ -1,0 +1,54 @@
+/* Form
+   ========================================================================== */
+
+.form { 
+    background-color: _palette(form-bg);
+    width:            max($numbers: 500px); 
+    padding:          1em 2em;  
+    align-items:      center;
+    justify-content:  center;
+    
+    @include breakpoint ( phone-only ) {
+        max-width: 500px;
+    }
+
+    input, textarea { 
+        background-color: transparent;
+        border:           none;
+        width: 100%;
+    }
+    
+    input[type=text], textarea {
+        border-bottom: solid 1px _palette(form-fg);
+        &:focus {border-color: #fff;} 
+    }
+
+    label {
+        text-transform: uppercase;
+        font-size: _size(form-text);
+        color:     _palette(form-fg);
+    }
+}
+
+.form-message:focus {
+    color: _palette(form-btn);
+}
+
+
+.form-molecule {
+    margin: 1rem;
+
+}
+
+.btn {
+    padding:         .5rem 2.5rem;
+    font-size:        1.2em;
+    font-weight:      600;
+    background-color: transparent;
+    text-transform:   uppercase;
+    color:           _palette(fg);
+    border:           none;
+    text-align:       right;
+    &:focus,
+    &:hover {color: #2c2c2c;}
+}

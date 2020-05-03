@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{{ site.author }} / {{ page.project.title }}</title>
+	<meta name="author" content="{{ site.author }}">
+	<meta name="description" content="{{ page.content | strip_html | strip_newlines }}">
+	<meta name="keywords" content="{{ page.meta.keywords }}">
+
+	{% include head.html %}
+
+</head>
+<body class="bg-alt">
+	
+	{% include header.html %} 
+
+	<main class="container">
+		<section class="project">
+
+			<article class="project-name">	
+				<span><a href="{{site.baseurl}}/" class="button-back">Gallery</a></span>
+			</article>
+			<section class="presentation">
+				<h1>{{ page.project.title }}</h1>
+				<p class="info"> {{ page.project.info }}</p>
+			</section>
+
+			<section>  
+				<ul>
+					{% for image in page.images %}
+					<li>
+						<div class="item-project">
+							<div class="{{ image.side }}">
+								{% if image.url2 %}
+								<img srcset="{{ image.url  | prepend: site.baseurl }} 1200w,
+											 {{ image.url2 | prepend: site.baseurl }} 900w"
+				   
+									 sizes="(min-width: 601px) 1200w, (max-width: 600px) 900w"
+									 src="{{ image.url | prepend: site.baseurl }}"
+									 alt="{{ image.alt }}" />
+								{% else %}
+								<img src="{{ image.url | prepend: site.baseurl }}" alt="{{ image.alt }}" />
+								{% endif %}
+
+								{% if image.info %}	
+								<div class="info-item">
+									{% if image.story %}
+										<p><span class="info-story">"{{ image.story }}</span></p>
+									{% endif %}
+									<p class="info"> {{ image.info }}</p> 
+									{% if image.link %}
+										<a href="{{ image.link }}">{{ image.link }}</a>
+									{% endif %}
+								</div>	
+								{% endif %}
+							</div>
+						</div>
+					</li>
+					{% endfor %}
+				</ul>
+			</section>
+
+
+		</section>
+
+
+	{% include project-navigation.html %}
+
+	</main>
+
+	{% include footer.html %}
+	
+	<script src="{{ "/assets/scripts/vendor/jquery-1.12.4.min.js" | prepend: site.baseurl }}"></script>
+	<script src="{{ "/assets/scripts/vendor/scrollreveal.min.js" | prepend: site.baseurl }}"></script>
+	<script src="{{ "/assets/scripts/vendor/sticky-kit.min.js" | prepend: site.baseurl }}"></script>
+	<script src="{{ "/assets/scripts/project.js" | prepend: site.baseurl }}"></script>
+</body>
+</html>

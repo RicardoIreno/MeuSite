@@ -1,0 +1,22 @@
+
+// Core
+@import "core/normalize.scss";
+@import "core/functions";
+@import "core/mixins";
+@import "core/vars";
+@import "core/fonts.scss";
+@import "core/typography";
+@import "core/containers";
+
+// Components
+
+@import "components/about";
+@import "components/header";
+@import "components/footer";
+@import "components/contact";
+@import "components/form";
+@import "components/project";
+@import "components/projects";
+@import "components/navigation";
+@import "components/follow";
+

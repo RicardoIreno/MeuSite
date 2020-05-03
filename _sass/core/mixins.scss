@@ -1,0 +1,115 @@
+
+/* Mixins 
+   ========================================================================== */
+
+   
+@mixin breakpoint($point) {
+
+	// 599px
+	@if $point == phone-only {
+		@media (max-width: 37.4375em) {
+			@content;
+		}
+	}
+
+	// 600px
+	@else if $point == phone-up {
+		@media (min-width: 37.5em) { 
+			@content;
+		}
+	}
+	
+	// 899px
+	@else if $point == tab-portrait-only {
+		@media (max-width: 56.1875em) { 
+			@content;
+		}
+	}
+
+	// 900px
+	@else if $point == tab-portrait-up {
+		@media (min-width: 56.25em) { 
+			@content;
+		} 
+	}
+
+	// 1199px
+	@else if $point == tab-landscape-only {
+		@media (max-width: 74.9375em) { 
+			@content;
+		}
+	}
+
+	// 1200px
+	@else if $point == desk-up {
+		@media (min-width: 75em) { 
+			@content;
+		}
+	}
+
+	@else {
+		@media (min-width: ($point / 16) + 'em') {
+			@content;
+		}
+	}
+}
+
+/* Code by Andrew Banchich */
+
+
+/// Makes an element's :before pseudoelement a FontAwesome icon.
+/// @param {string} $content Optional content value to use.
+/// @param {string} $where Optional pseudoelement to target (before or after).
+@mixin icon($content: false, $where: before) {
+
+	text-decoration: none;
+
+	&:#{$where} {
+
+		@if $content {
+			content: $content;
+		}
+
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		text-transform: none !important;
+
+	}
+
+}
+
+/// Applies padding to an element, taking the current element-margin value into account.
+/// @param {mixed} $tb Top/bottom padding.
+/// @param {mixed} $lr Left/right padding.
+/// @param {list} $pad Optional extra padding (in the following order top, right, bottom, left)
+/// @param {bool} $important If true, adds !important.
+@mixin padding($tb, $lr, $pad: (0,0,0,0), $important: null) {
+
+	@if $important {
+		$important: '!important';
+	}
+
+	padding: ($tb + nth($pad,1)) ($lr + nth($pad,2)) max(0.1em, $tb - _size(element-margin) + nth($pad,3)) ($lr + nth($pad,4)) #{$important};
+
+}
+
+/// Encodes a SVG data URL so IE doesn't choke (via codepen.io/jakob-e/pen/YXXBrp).
+@function svg-url($svg) {
+
+	$svg: str-replace($svg, '"', '\'');
+	$svg: str-replace($svg, '<', '%3C');
+	$svg: str-replace($svg, '>', '%3E');
+	$svg: str-replace($svg, '&', '%26');
+	$svg: str-replace($svg, '#', '%23');
+	$svg: str-replace($svg, '{', '%7B');
+	$svg: str-replace($svg, '}', '%7D');
+	$svg: str-replace($svg, ';', '%3B');
+
+	@return url("data:image/svg+xml;charset=utf8,#{$svg}");
+
+}
+
+/* ---------------------------- */
